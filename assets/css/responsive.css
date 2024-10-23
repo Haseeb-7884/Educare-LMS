@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+ 
+    .hero_reponsivenes{
+        display: none; 
+    }
+
+   .cources_responsive_section{
+        margin-bottom: 10px;
+    }
+    .cources_responsive_container{
+        margin-top: 10px;
+    }
+}

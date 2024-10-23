@@ -1,0 +1,73 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "<pre>";
+    print_r($_POST); // Print the submitted POST data
+    echo "</pre>";
+
+    // Process the submitted data as needed
+    $sectionNames = $_POST['sectionName'];
+    $contentOptions = $_POST['contentOption'];
+
+    foreach ($contentOptions as $index => $contentOption) {
+        $sectionName = $sectionNames[$index];
+        
+        // Process section data
+        echo "Section Name: " . $sectionName . PHP_EOL;
+        echo "Content Option: " . $contentOption . PHP_EOL;
+
+        // Depending on the contentOption, you can further process specific data
+        if ($contentOption == 'quiz') {
+            $quizQuestions = $_POST['quizQuestion'][$index];
+            $quizOptions1 = $_POST['quizOption1'][$index];
+            $quizOptions2 = $_POST['quizOption2'][$index];
+            $quizOptions3 = $_POST['quizOption3'][$index];
+            $quizOptions4 = $_POST['quizOption4'][$index];
+
+            // Process quiz data
+            echo "Quiz Question: " . $quizQuestions . PHP_EOL;
+            echo "Quiz Option 1: " . $quizOptions1 . PHP_EOL;
+            echo "Quiz Option 2: " . $quizOptions2 . PHP_EOL;
+            echo "Quiz Option 3: " . $quizOptions3 . PHP_EOL;
+            echo "Quiz Option 4: " . $quizOptions4 . PHP_EOL;
+        } elseif ($contentOption == 'assignment') {
+            $assignmentType = $_POST['assignmentType'][$index];
+
+            // Process assignment data
+            echo "Assignment Type: " . $assignmentType . PHP_EOL;
+
+            // Depending on the assignmentType, you can further process specific data
+            if ($assignmentType == 'small_assessment') {
+                $smallAssessmentDescription = $_POST['smallAssessmentDescription'][$index];
+                echo "Small Assessment Description: " . $smallAssessmentDescription . PHP_EOL;
+            } elseif ($assignmentType == 'assignment') {
+                // Process assignment file upload if needed
+            } elseif ($assignmentType == 'practical_task') {
+                $practicalTaskDetails = $_POST['practicalTaskDetails'][$index];
+                echo "Practical Task Details: " . $practicalTaskDetails . PHP_EOL;
+            }
+        } elseif ($contentOption == 'lecture') {
+            $lectureType = $_POST['lectureType'][$index];
+
+            // Process lecture data
+            echo "Lecture Type: " . $lectureType . PHP_EOL;
+
+            // Depending on the lectureType, you can further process specific data
+            if ($lectureType == 'article') {
+                // Process article file upload if needed
+            } elseif ($lectureType == 'lecture_video') {
+                // Process video file upload if needed
+            } elseif ($lectureType == 'lecture_video_online') {
+                $youtubeVideoLink = $_POST['YoutubeVideo'][$index];
+                echo "YouTube Video Link: " . $youtubeVideoLink . PHP_EOL;
+            }
+        }
+
+        echo PHP_EOL; // Line break for better readability
+    }
+
+    // Rest of your code...
+}
+?>

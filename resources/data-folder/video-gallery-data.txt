@@ -1,0 +1,50 @@
+
+// course masterpiece 
+<li>Local Database Editor</li>
+<li>CRUD - Create Read Update and Delete</li>
+<li>Theme - Front end Main Theme</li>
+<li>Dashboard Script</li>
+<li>Registeration - Signup and Login</li>
+
+
+
+/ course cover planning 
+I cover the course with apply master piece script and define how to
+compelete a project with it.
+Step by Step segments coverd with finally we have developed compelete project with next level
+planning. I saved student time and apply new and modern way to become a developer
+
+
+// course final words
+Wsih you all the best for the course. My really tried my best efferts to
+make your work easy. Only good
+<strong>web app development</strong> skill will developed with practice your self on codes and
+try to solve error and fixed the issues.
+
+// course prerequsites 
+<li>Basics of PHP MySQLHTML CSS Bootstrap (Optional)</li>
+<li>PC or laptop with any OS and Internet Connect</li>
+<li>VS Code Software, Any Web Browser, (Freeware)</li>
+<li>Basics of PHP MySQLHTML CSS Bootstrap (Optional)</li>
+
+// course instructor final words
+Dear if you have any query you can ask me in the question and answer section of any course where you are enrolled . Yes i will try my best to 
+provide you a good soltion of any problem. No doubt I always planning for providing a good service of teaching to all students
+
+// instructor status
+Programmer, Web Developer & Desinger
+
+// instructor biography
+Gretting, I am <strong>Muhammad Usman</strong>. My education is master's in
+computer science. Moreover. I am computer training instructor since 2008. I have created many
+<strong>computer courses online.</strong>
+My goal is to provide good teaching as well as an information that really requrires a student
+
+// instructor Additional info
+Presently, I did work for many companies and created more than <strong>1000 web applications.</strong>
+In addition, I love to teach the students. I feel better when my students learn from me. Further more i try hard to give qualititive knowledge
+
+// instructor way of teaching
+First, I create a project. After that I explain each and everything step by step, Of course. I add 
+source code or class work file as a result, students can able to do practise on it. Meanwhile my focus to improve student's skill.
+When students compelete the course. In conclusion able to do much more in real meaning not in words

@@ -1,0 +1,22 @@
+My learning 
+My cart
+Wishlist
+Instructor Dashboard 
+-----------------------
+Notifications
+Messages
+-----------------------
+Account Setting 
+Payments Methods 
+Subscriptions 
+Udemy Credit
+Purchase history
+-----------------------
+language
+-----------------------
+Public profile
+Edit Profile
+-----------------------
+Help 
+Logout
+

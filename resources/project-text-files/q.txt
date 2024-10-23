@@ -1,0 +1,26 @@
+     document.addEventListener("DOMContentLoaded", function () {
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const courses = document.querySelector('.courses');
+            const courseWidth = document.querySelector('.course').offsetWidth;
+            const numCourses = document.querySelectorAll('.course').length;
+            let currentIndex = 0;
+
+            function showCourses() {
+                courses.style.transform = `translateX(-${currentIndex * courseWidth}px)`;
+            }
+
+            nextBtn.addEventListener('click', function () {
+                if (currentIndex < numCourses - 3) {
+                    currentIndex++;
+                    showCourses();
+                }
+            });
+
+            prevBtn.addEventListener('click', function () {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    showCourses();
+                }
+            });
+        });

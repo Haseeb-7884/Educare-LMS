@@ -1,0 +1,168 @@
+<!-- curriculum_builder.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Curriculum Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #courseBuilder {
+            max-width: 600px;
+            margin: auto;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        button {
+            margin-top: 10px;
+        }
+        .edit-delete {
+            margin-top: 5px;
+        }
+        .edit-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="courseBuilder">
+    <h2>Course Curriculum Builder</h2>
+    
+    <form id="curriculumForm" action="display_data.php" method="post">
+        <div class="section">
+            <label for="sectionName">Section Name:</label>
+            <input type="text" id="sectionName" name="sectionName">
+            <button type="button" onclick="addSection()">Add Section</button>
+        </div>
+        
+        <div id="sectionsContainer"></div>
+        
+        <button type="submit">Submit Curriculum</button>
+    </form>
+
+</div>
+
+<script>
+    function addSection() {
+        const sectionName = document.getElementById('sectionName').value;
+        if (sectionName.trim() !== '') {
+            const sectionContainer = document.getElementById('sectionsContainer');
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'section';
+            sectionDiv.innerHTML = `
+                <h3>${sectionName}</h3>
+                
+                <label for="contentOption">Content Option:</label>
+                <select id="contentOption" name="contentOption[]">
+                    <option value="lecture">Lecture</option>
+                    <option value="assignment">Assignment</option>
+                    <option value="quiz">Quiz</option>
+                    <option value="video">Video</option>
+                </select>
+
+                <div id="specificContent">
+                    <!-- Content specific to each option will be added here -->
+                </div>
+
+                <div class="edit-delete">
+                    <button onclick="editSection(this)">Edit Section</button>
+                    <button onclick="deleteSection(this)">Delete Section</button>
+                </div>
+                <div class="edit-input" style="display: none;">
+                    <input type="text" id="editSectionInput" name="editSectionInput">
+                    <button onclick="saveSection(this)">Save</button>
+                    <button onclick="cancelEdit(this)">Cancel</button>
+                </div>
+            `;
+            sectionContainer.appendChild(sectionDiv);
+            setupContentOptionEvents(sectionDiv);
+        }
+    }
+
+    function setupContentOptionEvents(sectionDiv) {
+        const contentOptionSelect = sectionDiv.querySelector('#contentOption');
+        const specificContentDiv = sectionDiv.querySelector('#specificContent');
+
+        contentOptionSelect.addEventListener('change', function() {
+            const selectedOption = contentOptionSelect.value;
+            specificContentDiv.innerHTML = ''; // Clear previous content
+
+            if (selectedOption === 'assignment') {
+                // Add assignment specific inputs
+                specificContentDiv.innerHTML = `
+                    <label for="assignmentType">Assignment Type:</label>
+                    <select id="assignmentType" name="assignmentType[]">
+                        <option value="written">Written</option>
+                        <option value="video">Video</option>
+                    </select>
+                    <label for="assignmentDescription">Assignment Description:</label>
+                    <textarea id="assignmentDescription" name="assignmentDescription[]"></textarea>
+                    <label for="assignmentFile">Assignment File:</label>
+                    <input type="file" id="assignmentFile" name="assignmentFile[]">
+                    <label for="assignmentDuration">Assignment Duration (in minutes):</label>
+                    <input type="text" id="assignmentDuration" name="assignmentDuration[]">
+                `;
+            } else if (selectedOption === 'quiz') {
+                // Add quiz specific inputs
+                specificContentDiv.innerHTML = `
+                    <label for="quizQuestion">Quiz Question:</label>
+                    <input type="text" id="quizQuestion" name="quizQuestion[]">
+                    <label for="quizOption1">Option 1:</label>
+                    <input type="text" id="quizOption1" name="quizOption1[]">
+                    <label for="quizOption2">Option 2:</label>
+                    <input type="text" id="quizOption2" name="quizOption2[]">
+                    <label for="quizOption3">Option 3:</label>
+                    <input type="text" id="quizOption3" name="quizOption3[]">
+                    <label for="quizOption4">Option 4:</label>
+                    <input type="text" id="quizOption4" name="quizOption4[]">
+                `;
+            } else if (selectedOption === 'video') {
+                // Add video specific inputs
+                specificContentDiv.innerHTML = `
+                    <label for="videoLink">Video Link:</label>
+                    <input type="text" id="videoLink" name="videoLink[]">
+                `;
+            }
+        });
+    }
+
+    function editSection(button) {
+        const sectionDiv = button.closest('.section');
+        const editInput = sectionDiv.querySelector('.edit-input');
+        const sectionText = sectionDiv.querySelector('h3');
+        editInput.querySelector('input').value = sectionText.innerText;
+        sectionText.style.display = 'none';
+        editInput.style.display = 'block';
+    }
+
+    function saveSection(button) {
+        const sectionDiv = button.closest('.section');
+        const editInput = sectionDiv.querySelector('.edit-input');
+        const sectionText = sectionDiv.querySelector('h3');
+        sectionText.innerText = editInput.querySelector('input').value;
+        sectionText.style.display = 'block';
+        editInput.style.display = 'none';
+    }
+
+    function cancelEdit(button) {
+        const sectionDiv = button.closest('.section');
+        const editInput = sectionDiv.querySelector('.edit-input');
+        const sectionText = sectionDiv.querySelector('h3');
+        sectionText.style.display = 'block';
+        editInput.style.display = 'none';
+    }
+
+    function deleteSection(button) {
+        const sectionDiv = button.closest('.section');
+        sectionDiv.remove();
+    }
+</script>
+
+</body>
+</html>

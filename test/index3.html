@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Slider</title>
+    <style>
+        #courses-container {
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        #courses-list {
+            display: flex;
+            transition: transform 0.5s ease;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .course {
+            flex: 0 0 calc(100% / 6); /* Adjust this for different number of courses per slide */
+            max-width: calc(100% / 6); /* Adjust this for different number of courses per slide */
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        .slide-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 24px;
+        }
+
+        .slide-left {
+            left: 10px;
+            display: none;
+        }
+
+        .slide-right {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="courses-container">
+        <ul id="courses-list">
+            <!-- Your courses will be dynamically added here -->
+        </ul>
+        <button class="slide-button slide-left">&larr;</button>
+        <button class="slide-button slide-right">&rarr;</button>
+    </div>
+
+    <script>
+        // Sample list of courses (you can replace this with your actual data)
+        const courses = [
+            "Course 1",
+            "Course 2",
+            "Course 3",
+            "Course 4",
+            "Course 5",
+            "Course 6",
+            "Course 7",
+            "Course 8",
+            // Add more courses as needed
+        ];
+
+        const itemsPerSlide = 6; // Number of courses per slide
+        let currentSlide = 0;
+
+        const coursesList = document.getElementById("courses-list");
+
+        function displayCourses(startIndex) {
+            coursesList.innerHTML = ""; // Clear existing courses
+
+            for (let i = startIndex; i < startIndex + itemsPerSlide && i < courses.length; i++) {
+                const listItem = document.createElement("li");
+                listItem.classList.add("course");
+                listItem.textContent = courses[i];
+                coursesList.appendChild(listItem);
+            }
+
+            // Show/hide previous slide button
+            const slideLeftBtn = document.querySelector(".slide-left");
+            slideLeftBtn.style.display = (startIndex === 0) ? "none" : "block";
+        }
+
+        function showNextSlide() {
+            const totalSlides = Math.ceil(courses.length / itemsPerSlide);
+            currentSlide = (currentSlide + 1) % totalSlides;
+            const translateXValue = -currentSlide * 100;
+            coursesList.style.transform = `translateX(${translateXValue}%)`;
+
+            const startIndex = currentSlide * itemsPerSlide;
+            displayCourses(startIndex);
+        }
+
+        function showPreviousSlide() {
+            currentSlide--;
+            const translateXValue = -currentSlide * 100;
+            coursesList.style.transform = `translateX(${translateXValue}%)`;
+
+            const startIndex = currentSlide * itemsPerSlide;
+            displayCourses(startIndex);
+        }
+
+        // Display the initial set of courses
+        displayCourses(0);
+
+        // Event listeners for slide buttons
+        const slideLeftBtn = document.querySelector(".slide-left");
+        const slideRightBtn = document.querySelector(".slide-right");
+
+        slideRightBtn.addEventListener("click", showNextSlide);
+        slideLeftBtn.addEventListener("click", showPreviousSlide);
+    </script>
+</body>
+</html>

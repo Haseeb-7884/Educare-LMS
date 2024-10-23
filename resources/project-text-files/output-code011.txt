@@ -1,0 +1,105 @@
+<?php
+// Establish database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "course_builder";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Process course sections
+    if (isset($_POST['sectionName']) && is_array($_POST['sectionName'])) {
+        foreach ($_POST['sectionName'] as $key => $sectionName) {
+            $sectionName = $conn->real_escape_string($sectionName);
+            $contentOption = $conn->real_escape_string($_POST['contentOption'][$key]);
+
+            // Insert data into course_sections table
+            $sql = "INSERT INTO course_sections (section_name, content_option) VALUES ('$sectionName', '$contentOption')";
+            $conn->query($sql);
+
+            // Get the ID of the last inserted section
+            $sectionId = $conn->insert_id;
+
+            // Process content based on the selected option
+            switch ($contentOption) {
+                case 'assignment':
+                    $assignmentType = $conn->real_escape_string($_POST['assignmentType'][$key]);
+                    $smallAssessmentDescription = $conn->real_escape_string($_POST['smallAssessmentDescription'][$key]);
+                    $practicalTaskDetails = $conn->real_escape_string($_POST['practicalTaskDetails'][$key]);
+
+                    // Insert data into assignments table
+                    $sql = "INSERT INTO assignments (section_id, assignment_type, small_assessment_description, practical_task_details) 
+                            VALUES ('$sectionId', '$assignmentType', '$smallAssessmentDescription', '$practicalTaskDetails')";
+                    $conn->query($sql);
+                    break;
+
+                case 'quiz':
+                    $quizType = $conn->real_escape_string($_POST['quizType'][$key]);
+
+                    // Insert data into quizzes table
+                    $sql = "INSERT INTO quizzes (section_id, quiz_type) VALUES ('$sectionId', '$quizType')";
+                    $conn->query($sql);
+
+                    $quizId = $conn->insert_id;
+
+                    foreach ($_POST['quizQuestion'][$key] as $questionKey => $question) {
+                        $question = $conn->real_escape_string($question);
+                        $option1 = $conn->real_escape_string($_POST['quizOption1'][$key][$questionKey]);
+                        $option2 = $conn->real_escape_string($_POST['quizOption2'][$key][$questionKey]);
+                        $option3 = $conn->real_escape_string($_POST['quizOption3'][$key][$questionKey]);
+                        $option4 = $conn->real_escape_string($_POST['quizOption4'][$key][$questionKey]);
+
+                        // Insert data into quiz_questions table
+                        $sql = "INSERT INTO quiz_questions (section_id, question_text, option1, option2, option3, option4) 
+                                VALUES ('$sectionId', '$question', '$option1', '$option2', '$option3', '$option4')";
+                        $conn->query($sql);
+                    }
+                    break;
+
+                case 'lecture':
+                    $lectureType = $conn->real_escape_string($_POST['lectureType'][$key]);
+
+                    // Insert data into lectures table
+                    $sql = "INSERT INTO lectures (section_id, lecture_type) VALUES ('$sectionId', '$lectureType')";
+                    $conn->query($sql);
+
+                    $lectureId = $conn->insert_id;
+
+                    switch ($lectureType) {
+                        case 'article':
+                            // Handle article upload
+                            // You can use $_FILES['article'][$key] to process the uploaded file
+                            break;
+
+                        case 'lecture_video':
+                            // Handle local video upload
+                            // You can use $_FILES['localVideo'][$key] to process the uploaded file
+                            break;
+
+                        case 'lecture_video_online':
+                            $youtubeVideoLink = $conn->real_escape_string($_POST['YoutubeVideo'][$key]);
+
+                            // Update youtube_video_link in lectures table
+                            $sql = "UPDATE lectures SET youtube_video_link = '$youtubeVideoLink' WHERE id = '$lectureId'";
+                            $conn->query($sql);
+                            break;
+                    }
+                    break;
+            }
+        }
+    }
+
+    echo "Data submitted successfully!";
+} else {
+    echo "Invalid request method!";
+}
+
+// Close the database connection
+$conn->close();
+?>

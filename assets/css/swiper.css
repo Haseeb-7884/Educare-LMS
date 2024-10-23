@@ -1,0 +1,25 @@
+.nav-list-section {
+    list-style: none;
+    position: absolute;
+    top: -35%;
+    left: 82.5%;
+    width: 140px;
+}
+.nav-list-section > ul{
+    list-style: none;
+}
+.swiper-button-next{
+    background-color: blue;
+    color: white;
+    height: 35px; /* Adjust as needed */
+    width: 35px; /* Adjust as needed */
+    border-radius: 50%;
+}
+.swiper-button-prev{
+    background-color: blue;
+    color: white;
+    height: 35px; /* Adjust as needed */
+    width: 35px; /* Adjust as needed */
+    border-radius: 50%;
+    /* margin-right: 30px; */
+}

@@ -1,0 +1,11 @@
+unorder list
+disc (default): Filled circle bullet point.
+circle: Hollow circle bullet point.
+square: Square bullet point.
+
+order list
+1: Arabic numerals (default).
+A: Uppercase alphabetical letters (A, B, C, ...).
+a: Lowercase alphabetical letters (a, b, c, ...).
+I: Uppercase Roman numerals (I, II, III, ...).
+i: Lowercase Roman numerals (i, ii, iii, ...).

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            background-color: purple;
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            width: auto;
+            height: auto;
+            padding: 5px 15px;
+        }
+
+        label.logo {
+            color: white;
+            line-height: 80px;
+            font-size: 32px;
+            padding: 0px 100px;
+            margin: 5px 15px;
+        }
+
+        nav {
+            background-color: rgb(59, 6, 195);
+            height: 80px;
+            width: 100%;
+        }
+
+        nav ul {
+            float: right;
+            list-style: none;
+            margin-right: 40px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            line-height: 50px;
+            margin: 5px 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 17px;
+            text-decoration: none;
+            text-transform: capitalize;
+
+        }
+
+        a.active,
+        a:hover {
+            background-color: rgb(115, 0, 255);
+        }
+
+        .checkboxbtn {
+            color: white;
+            font-size: 17px;
+            float: right;
+            margin-right: 40px;
+            line-height: 80px;
+            display: none;
+
+        }
+
+        #check {
+            display: none;
+        }
+
+        @media screen and (max-width:600px) {
+            .container {
+                background-color: blue;
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width:836px) {
+            label.logo {
+                font-size: 26px;
+                padding: 50px;
+            }
+
+            .checkboxbtn {
+                display: block;
+            }
+
+            nav ul {
+                background-color: rgb(4, 4, 53);
+                height: 100vh;
+                width: 100%;
+                position: fixed;
+                top: 70px;
+                left: -110%;
+                transition: all .5s;
+            }
+
+            nav ul li {
+                display: block;
+                text-align: center;
+            }
+
+            a,
+            a.active,
+            a:hover {
+                background: none;
+                color: rgb(9, 140, 112);
+            }
+
+            #check:checked~ul {
+                left: 0%;
+            }
+        }
+
+        @media screen and (max-width:230px) {
+            label.logo {
+                font-size: 17px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkboxbtn"><i class="fa-solid fa-bars"></i></label>
+        <label class="logo">Logo</label>
+        <ul>
+            <li><a href="#" class="active">home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">portfolio</a></li>
+            <li><a href="#">contact us</a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+        </ul>
+    </nav>
+
+
+    <!-- <div class="container">
+        <div class="card">
+            <h1>Heading</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                 Ullam cum numquam atque facere quas, iusto veniam laudantium quo accusantium, odio 
+                enim amet necessitatibus repellat! Explicabo omnis obcaecati quos 
+                eaque voluptatum.</p>
+        </div>
+        <div class="card">
+            <h1>Heading</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                 Ullam cum numquam atque facere quas, iusto veniam laudantium quo accusantium, odio 
+                enim amet necessitatibus repellat! Explicabo omnis obcaecati quos 
+                eaque voluptatum.</p>
+        </div>
+        <div class="card">
+            <h1>Heading</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                 Ullam cum numquam atque facere quas, iusto veniam laudantium quo accusantium, odio 
+                enim amet necessitatibus repellat! Explicabo omnis obcaecati quos 
+                eaque voluptatum.</p>
+        </div>
+        <div class="card">
+            <h1>Heading</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                 Ullam cum numquam atque facere quas, iusto veniam laudantium quo accusantium, odio 
+                enim amet necessitatibus repellat! Explicabo omnis obcaecati quos 
+                eaque voluptatum.</p>
+        </div>
+    </div> -->
+</body>
+
+</html>

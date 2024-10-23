@@ -1,0 +1,125 @@
+<?php 
+include('../../back.php');
+
+// Check if courses_id, requirments_id, and form submission are set
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $coruse_id = $_POST['courses_id'];
+    $requirments_id = $_POST['requirments_id'];
+
+    // echo $coruse_id;
+    // echo $requirments_id;
+
+
+    $section1 = $_POST['section1'];
+    $section2 = $_POST['section2'];
+    $section3 = $_POST['section3'];
+    $section4 = $_POST['section4'];
+    $section5 = $_POST['section5'];
+
+    $section_first = $section1 . $section2;
+    $section_second = $section3 . $section4 . $section5;
+    $final_sum = $section_first . $section_second . $coruse_id . $requirments_id;
+
+    // echo $final_sum;
+
+//-----------------------------------------------------------------------------------------------------------------------        
+// $local1 = $_FILE['local1'];
+// $local1Array = coursehandling($local1);
+$local1 = coursehandling($_FILES['local1']);
+
+$youtube1 = $_POST['youtube1'];
+
+$article1 = coursehandling($_FILES['article1']);
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+$local2 = coursehandling($_FILES['local2']);
+
+$youtube2 = $_POST['youtube2'];
+
+$article2 = coursehandling($_FILES['article2']);
+//----------------------------------------------------------------------------------------------------------------------------------
+
+$local3 = coursehandling($_FILES['local3']);
+
+$youtube3 = $_POST['youtube3'];
+
+$article3 = coursehandling($_FILES['article3']);
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+$local4 = coursehandling($_FILES['local4']);
+
+$youtube4 = $_POST['youtube4'];
+
+$article4 = coursehandling($_FILES['article4']);
+//----------------------------------------------------------------------------------------------------------------------------------
+$local5 = coursehandling($_FILES['local5']);
+
+$youtube5 = $_POST['youtube5'];
+
+$article5 = coursehandling($_FILES['article5']);
+//----------------------------------------------------------------------------------------------------------------------------------
+
+
+$content_one = $local1 . $youtube1 . $article1;
+$content_two = $local2 . $youtube2 . $article3;
+$content_three = $local3 . $youtube3 . $article3;
+$content_four = $local4 . $youtube4 . $article4;
+$content_five = $local5 . $youtube5 . $article5;
+$content_ids = $coruse_id . $requirments_id;
+
+$final_content_data = $content_one . $content_two . $content_three . $content_four . $content_five . $content_ids;
+
+// echo  $final_content_data;
+    $get_data = new backend();
+
+    if($final_sum) {
+        $five_Data = $get_data->insertion('course_sections', array(
+            'section1' => $section1, 
+            'section2' => $section2, 
+            'section3' => $section3,
+            'section4' => $section4, 
+            'section5' => $section5,
+            'courses_id' => $coruse_id,
+            'requirments_id' => $requirments_id
+        ));
+        if($five_Data) {
+           
+            $all_Data = $get_data->fetching('course_sections');
+            foreach($all_Data as $main_data){
+                $section_id = $main_data['section_id'];
+                $courses_id = $main_data['courses_id'];
+                $requirments_id = $main_data['requirments_id'];
+            }
+            echo $section_id;
+            echo $courses_id;
+            echo $requirments_id;
+
+            // $adding_data =  $get_data->insertion('courses_lectures',array(
+            //     'local1'=>$local1['courcesPath'],'youtube1'=>$youtube1,'article1'=>$article1['courcesPath'],'lecture_section_1'=>$section1,
+            //     'local2'=>$local2['courcesPath'] , 'youtube2'=> $youtube2 , 'article2'=>$article2['courcesPath'],'lecture_section_2'=>$section2,
+            //     'local3'=>$local3['courcesPath'] , 'youtube3'=> $youtube3 , 'article3'=>$article3['courcesPath'],'lecture_section_3'=>$section3,
+            //     'local4'=>$local4['courcesPath'] , 'youtube4'=> $youtube4 , 'article4'=>$article4['courcesPath'],'lecture_section_4'=>$section4,
+            //     'local5'=>$local5['courcesPath'] , 'youtube5'=> $youtube5 , 'article5'=>$article5['courcesPath'],'lecture_section_5'=>$section5,
+            
+            //     'section_id'=>$section_id,
+            //     'courses_id' => $courses_id,
+            //     'requirments_id' => $requirments_id
+            //    ));
+
+               echo "Data inserted successfully."; 
+
+               header("location: quiz_assingment.php?section_id=$section_id&courses_id=$courses_id&requirments_id=$requirments_id");
+           
+        } else {
+            echo "Failed to insert data.";
+        }
+
+    }
+} 
+else {
+    echo "courses_id, requirments_id, or form submission not provided or detected.";
+}
+?>
+<!-- <a href="../../back.php"></a> -->

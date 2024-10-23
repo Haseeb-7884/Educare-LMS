@@ -1,0 +1,144 @@
+.hero-section {
+    width: 87%;
+    margin: 0 auto;
+    /* border: 2px solid red; */
+    height: 100vh;
+}
+
+.hero-section-first {
+    float: left;
+    width: 60%;
+    height: 100%;
+    /* border: 1px solid blue; */
+}
+
+.hero-section-first h3 {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.mobile-responsiveness-2{
+    width: 230px;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+.accordion-button:active {
+    color: black;
+}
+
+.accordion-button:focus {
+    color: black;
+}
+
+.payment-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Style for submit button */
+.payment-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #00a0d2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-form button:hover {
+    background-color: #0079a5;
+}
+
+.hero-section-second {
+    position: absolute;
+    top: 0%;
+    left: 60%;
+    width: 40%;
+    height: 88.5%;
+    background-color: rgba(128, 128, 128, 0.122);
+}
+
+.hero-section-second h2 {
+    font-size: 40px;
+    margin-top: 19%;
+    margin-left: 13%;
+    font-weight: bold;
+}
+
+.hero-section-second-price {
+    /* border: 2px solid red; */
+    width: 73%;
+    padding-top: 25px;
+    padding-bottom: 0px;
+    margin: 0 auto;
+}
+
+.hero-section-second-price-bold {
+    /* border: 2px solid red; */
+    width: 73%;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.hero-second-container {
+    width: 75%;
+    margin-top: 20px;
+    background-color: purple;
+    color: white;
+    padding: 15px;
+    margin-left: 15%;
+    box-shadow: 10px 10px 10px #636262;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section-first {
+        width: 100%;
+        height: 90%;
+        position: relative;
+        /* border: 1px solid blue; */
+    }
+
+    .hero-section-second {
+        top: 135%;
+        position: absolute;
+        left: 5%;
+        width: 90%;
+        height: 85%;
+        border: 1px solid blue;
+        /* margin-bottom: 10%; */
+    }
+
+    .hero-second-container {
+        width: 70%;
+        margin-top: 20px;
+        margin-left: 15%;
+        position: relative;
+    }
+
+    .mobile-responsive-01 {
+        /* border: 2px solid red; */
+        /* margin-right: 10%; */
+        right: 6%;
+        bottom: -2%;
+        width: 75%;
+        position: absolute;
+    }
+    .mobile-responsiveness-2{
+        width: 100%;
+    }
+}

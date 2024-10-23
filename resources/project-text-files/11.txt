@@ -1,0 +1,6 @@
+ <?php 
+$course_selection = $course_cat->fetching('cource_details');
+            if($course_selection){
+                $main_id = $course_selection[0]['course_id']; ?>
+              <input type="hidden" name="main_id" value="<?php echo $main_id; ?>">
+              <?php } ?>

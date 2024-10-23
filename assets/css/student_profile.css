@@ -1,0 +1,27 @@
+.profile_container{
+    border: 2px solid gray;   
+    background-color: purple;
+    /* border-radius: 10px; */
+    color: white;
+    height: 100vh;
+    width: 38%;
+    margin: auto;
+    margin-top: 20px;
+
+}
+.profile_container > form{
+    gap: 30px;
+}
+.profile_container_first{
+    width: 70%;
+    height: 80%;
+    /* background-color: blue; */
+}
+.profile_container_second{
+    width: 30%;
+    height: 80%;
+    /* background-color: orange; */
+}
+.profile_container_second > input{
+    height: 30vh;
+}

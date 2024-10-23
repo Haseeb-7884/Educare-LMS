@@ -1,0 +1,113 @@
+         <div class="mb-3 text-dark mt-5">
+                                <label class="form-label">
+                                    <strong class="text-dark">Course Short Description
+
+                               <button type="button" class="btn" onclick="execCommand('underline')">
+                               <!-- Underline -->
+                               <i class="fa-solid fa-underline" style="color: #000000;"></i>
+                               </button>
+                               
+                               <button type="button" class="btn" onclick="execCommand('italic')">
+                               <!-- Italic -->
+                               <i class="fa-solid fa-italic" style="color: #000000;"></i>
+                               </button>
+
+                               <button type="button" class="btn" onclick="execCommand('bold')">
+                               <!-- Bold -->
+                               <i class="fa-solid fa-bold" style="color: #000205;"></i>
+                              </button>
+
+                                <button type="button" class="btn fw-bold" onclick="createList('insertUnorderedList')">
+                                    <!-- Bullet List -->
+                                    <i class="fa-solid fa-list-ul" style="color: #000000;"></i>
+                                </button>
+                                    <button type="button" class="btn fw-bold" onclick="createList('insertOrderedList')">
+                                    <!-- Numbered List -->
+                                    <i class="fa-solid fa-list-ol" style="color: #000000;"></i>
+                                </button>
+
+                                    </strong></label>
+                                    <div class="form-floating">
+
+                                    <div id="editor2" class="editor" contenteditable="true" placeholder="Start typing here..."></div>
+                                    <!-- Hidden input field to store editor content -->
+                                    <input type="hidden" id="editorContent2" name="short_description" id="editorContent_0">
+
+                                        <!-- <textarea class="form-control" name="course_learners" placeholder="Discuss What Students Will Learn in Course" id="floatingTextarea2" style="height: 100px"></textarea>
+                                        <label>Enter Details</label> -->
+                                    </div>
+                                    Discuss about the short discription of the course that is overall conclusion sum-up your description into short for better understanding
+                            </div>
+
+<script>
+        function execCommand(command) {
+            document.execCommand(command, false, null);
+        }
+
+        function createList(command) {
+            document.execCommand(command, false, null);
+        }
+
+        // Function to check the editor content and enable/disable the submit button
+        function checkEditorContent() {
+            var editors = document.querySelectorAll('.editor');
+            var submitBtn = document.getElementById('submitBtn');
+            var allNonEmpty = true;
+
+            editors.forEach(function(editor, index) {
+                var editorContent = editor.innerHTML.trim();
+                var hiddenInput = document.getElementById('editorContent_' + index);
+                var errorMessage = editor.nextElementSibling;
+
+                // Update hidden input value
+                hiddenInput.value = editorContent;
+
+                // Check if the content is empty
+                if (editorContent === '' || editorContent === '<br>') {
+                    allNonEmpty = false;
+                    editor.classList.add('error');
+                    errorMessage.style.display = 'block';
+                } else {
+                    editor.classList.remove('error');
+                    errorMessage.style.display = 'none';
+                }
+            });
+
+            if (allNonEmpty) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('disabled');
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.classList.add('disabled');
+            }
+        }
+
+        // Attach the input event listener to all editors
+        document.querySelectorAll('.editor').forEach(function(editor) {
+            editor.addEventListener('input', checkEditorContent);
+        });
+
+        // Initial check on page load
+        window.addEventListener('load', checkEditorContent);
+
+        // Form submit event listener to validate before actual submission
+        document.getElementById('textEditorForm').addEventListener('submit', function(event) {
+            var editors = document.querySelectorAll('.editor');
+            var allNonEmpty = true;
+
+            editors.forEach(function(editor, index) {
+                var editorContent = editor.innerHTML.trim();
+                var errorMessage = editor.nextElementSibling;
+
+                if (editorContent === '' || editorContent === '<br>') {
+                    allNonEmpty = false;
+                    editor.classList.add('error');
+                    errorMessage.style.display = 'block';
+                    event.preventDefault(); // Prevent form submission
+                } else {
+                    editor.classList.remove('error');
+                    errorMessage.style.display = 'none';
+                }
+            });
+        });
+    </script>

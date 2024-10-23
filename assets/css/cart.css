@@ -1,0 +1,189 @@
+.container-text {
+    margin-left: 55px;
+}
+
+.hero-section {
+    width: 92%;
+    margin: 0 auto;
+    margin-top: 40px;
+    /* height:1000px; */
+    height: 2px;
+    /* border: 2px solid red;    */
+}
+
+.hero-section-first {
+    float: left;
+    height: 100%;
+
+    width: 74%;
+    z-index: 9;
+    /* border: 2px solid blue; */
+}
+
+/*--------------------------------------------------------------------------------------------*/
+.section-first-container {
+    position: relative;
+    /* border: 2px solid black; */
+    width: 99%;
+    /* height: 30vh; */
+    height: 100%;
+}
+
+/*--------------------------------------------------------------------------------------------*/
+.hero-section-second {
+    float: right;
+    height: 100%;
+    width: 25%;
+    z-index: 9;
+    /* border: 2px solid green; */
+    margin-right: 40px;
+}
+
+.section-first-horizontal-row {
+    border-bottom: 2px solid grey;
+}
+
+.section-first-content {
+    /* border: 2px solid green; */
+    margin-top: 20px;
+    height: 150px;
+    /* height: 25%; */
+}
+
+.section-first-content-first {
+    height: 100%;
+    width: 70%;
+    /* border: 2px solid orange; */
+}
+
+.first-content-first-img {
+    height: 75px;
+    width: 110px;
+}
+
+/* .section-first-content-first-desc{
+    border: 2px solid orange;
+} */
+.section-first-content-first-desc h6 {
+    font-size: 19px;
+    margin-top: -2px;
+    margin-bottom: 0px;
+}
+
+.section-first-content-first-desc p {
+    font-size: 14px;
+    margin-top: 3px;
+    margin-bottom: 0px;
+}
+
+.content-first-desc-content {
+    margin-top: 3px;
+    /* border: 2px solid brown; */
+    height: 22px;
+}
+
+.content-first-desc-content p {
+    /* border: 2px solid brown; */
+    font-size: 10px;
+}
+
+.badge-color {
+    background-color: rgb(236, 235, 152);
+    border: 2px solid rgb(236, 235, 152);
+    padding-top: -1px;
+    color: black;
+}
+
+.section-first-content-second {
+    height: 100%;
+    width: 30%;
+    /* border: 2px solid purple; */
+}
+
+.section-first-content-second-links {
+    /* border: 2px solid red; */
+    text-align: right;
+    color: purple;
+}
+
+.hero-section-second-btn {
+    background-color: purple;
+    font-weight: bold;
+    color: white;
+    display: block;
+    margin-left: 20px;
+    border-radius: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.hero-section-second-row {
+    border-bottom: 2px solid grey;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.third-section{
+    position: absolute;
+    /* top: 100%; */
+    bottom: -24%;
+}
+
+.cources_section{
+    z-index: 10;
+    width: 1250px;
+}
+
+.third-section-heading {
+    margin-top: 30px;
+    /* margin-left: 50px; */
+}
+
+.Instructor_img {
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    /* border: 2px solid red; */
+    margin-right: 10px;
+}
+
+.Instructor_img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.Instructor-text {
+    margin-top: 2px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section {
+        width: 100%;
+        height: 75vh;
+        border: 2px solid red;
+    }
+
+    .hero-section-first {
+        width: 100%;
+        border: 2px solid blue;
+    }
+
+    .section-first-content {
+        border: 2px solid green;
+        width: 100%;
+    }
+    /* .section-first-content-first {
+        width: 100%;
+        border: 2px solid orange;
+    }     */
+
+    .section-first-content-second {
+        display: inline-flex;
+        width: 900px;
+        margin-top: 40%;
+        margin-right: 80%;
+        /* width: 30%; */
+        border: 2px solid purple;
+    }
+}

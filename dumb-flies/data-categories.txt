@@ -1,0 +1,76 @@
+     
+<a href="" class="col-md-3 text-decoration-none text-dark cources_responsive_section">
+        <div>
+          <div class="card">
+            <div class="card-body">
+              <img src="assets/images/UI-UX.png" class="course_pics" alt="">
+              <h5 class="card-title text-center">UI/UX design</h5>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="" class="col-md-3 text-decoration-none text-dark cources_responsive_section">
+        <div>
+          <div class="card">
+            <div class="card-body">
+              <img src="assets/images/data-science.png" class="course_pics" alt="">
+              <h5 class="card-title text-center">Data Science</h5>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="" class="col-md-3 text-decoration-none text-dark">
+        <div>
+          <div class="card">
+            <div class="card-body">
+              <img src="assets/images/graphic-design.png" class="course_pics" alt="">
+              <h5 class="card-title text-center">Graphics Design</h5>
+            </div>
+          </div>
+        </div>
+      </a>
+
+<a href="" class="col-md-3 text-decoration-none text-dark cources_responsive_section">
+        <div>
+          <div class="card">
+            <div class="card-body">
+              <img src="assets/images/digital-marketing.png" class="course_pics" alt="">
+              <h5 class="card-title text-center">Digital Marketing</h5>
+            </div>
+          </div>
+        </div>
+      </a>
+
+
+   <a href="" class="col-md-3 text-decoration-none text-dark cources_responsive_section">
+        <div>
+          <div class="card">
+            <div class="card-body">
+              <img src="assets/images/office_6879724.png" class="course_pics" alt="">
+              <h5 class="card-title text-center">Busniess</h5>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="" class="col-md-3 text-decoration-none text-dark cources_responsive_section">
+        <div>
+          <div class="card">
+            <div class="card-body">
+              <img src="assets/images/budget_781831.png" class="course_pics" alt="">
+              <h5 class="card-title text-center">Finance</h5>
+            </div>
+          </div>
+        </div>
+      </a>
+      
+      <a href="" class="col-md-3 text-decoration-none text-dark">
+        <div>
+          <div class="card">
+            <div class="card-body">
+              <img src="assets/images/editing_1229654.png" class="course_pics" alt="">
+              <h5 class="card-title text-center">Video Editing</h5>
+            </div>
+          </div>
+        </div>
+      </a>

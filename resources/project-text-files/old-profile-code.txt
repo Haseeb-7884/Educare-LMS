@@ -1,0 +1,31 @@
+ foreach($get_data as $maindata){
+  echo"
+  <div class='bg-primary fw-bold mt-5'>
+     <div class='container text-light p-3'><h1>
+     ".$maindata['fname']." ".$maindata['lname']."
+     </h1>
+    <h3>
+     ".$maindata['headline']."
+    </h3></div>
+  </div>
+
+  <div class='container row d-flex mt-5 justify-content-around align-items-center ms-5'>
+    <div class='col-sm-4'>
+            <div class='instructor-image'>
+             <img src='../../".$maindata['instructor_img']."' class='image'>    
+            <div class='mt-3 d-flex justify-content-around'>
+                <a href='".$maindata['twitter']."'><i class='fa-brands fa-twitter' style='color: #0011ff;'></i></a>
+                <a href='".$maindata['facebook']."'><i class='fa-brands fa-facebook' style='color: #0011ff;'></i></a>
+                <a href='".$maindata['linkdin']."'><i class='fa-brands fa-linkedin' style='color: #0011ff;'></i></a>
+                <a href='".$maindata['youtube']."'><i class='fa-brands fa-youtube' style='color: #0011ff;'></i></a>
+            </div>
+            </div>
+    </div>
+
+    <div class='col-sm-8'>
+        <p class='instructor-text'>
+        ".$maindata['biography']."
+        </p>
+    </div>
+  </div>";   
+}

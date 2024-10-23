@@ -1,0 +1,158 @@
+
+.hero-section {
+    border-radius: 0px;
+    height: 23vh;
+    width: 95%;
+    margin: 0 auto;
+    background-color: skyblue;
+}
+
+.hero-section-content {
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+}
+
+.hero-section-content i {
+    color: #000000;
+    font-size: 33px;
+    margin-left: 15px;
+}
+
+.hero-section-content h6 {
+    margin-top: 5px;
+    color: black;
+    margin-left: 30px;
+}
+
+.hero-section-btn {
+    background-color: #000000;
+    color: white;
+    font-weight: bold;
+    border-radius: 0px;
+    margin-top: 25px;
+    margin-left: 78px;
+}
+
+.second-section {
+    border-radius: 0px;
+    height: 41vh;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.second-section-heading {
+    margin-left: 36px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.second-section-first {
+    float: left;
+    width: 32%;
+    height: 100%;
+}
+
+.second-section-first-img {
+    /* border: 2px solid blue; */
+    height: 86%;
+    margin-top: 17px;
+    margin-left: 17px;
+}
+.second-section-first-img img{
+    height: 100%;
+    width: 100%;
+}
+.second-section-second {
+    float: right;
+    width: 66%;
+    /* border: 2px solid white; */
+    height: 100%;
+}
+.second-section-second h4{
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+.second-section-second-btn{
+    color: white;
+    border-radius: 0px;
+    font-weight: bold;
+    background-color: purple;
+    margin-top: 20px;
+}
+.third-section-heading{
+    margin-top: 60px;
+    margin-left: 33px;
+    font-weight: bold;
+}
+.third-section-heading span{
+    color: blue;
+}
+.Instructor_img{
+    height: 28px;
+    width: 28px;
+    border-radius:50%;
+    /* border: 2px solid red; */
+    margin-right: 10px;
+}
+.Instructor_img img{
+    height: 100%;
+    width: 100%;
+    border-radius:50%;
+}
+.Instructor-text{
+    margin-top: 2px;
+}
+.fourth-section-heading{
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    /* margin-left: 43px; */
+    margin-left: 33px;
+}
+.fourth-section-heading a{
+    color: blue;
+}
+
+.badge-color {
+    background-color: rgb(236, 235, 152);
+    color: black;
+}
+.cources_section{
+    width: 97%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .second-section {
+        /* border:2px solid red; */
+        height: 70vh;
+    }
+    .second-section-first {
+        width: 96%;
+        /* border: 2px solid red; */
+        height: 240px;
+    }
+    .second-section-second {
+        width: 100%;
+        /* border: 2px solid red; */
+        height: 45%;
+        /* height: 180px; */
+    }
+    .second-section-second h4{
+        line-height: 35px;
+        margin-top: 0px;
+        margin-left: 15px;
+        /* border: 2px solid red; */
+    }
+    .second-section-second p{
+        margin-left: 15px;
+    }
+    .second-section-second h5{
+        display: none;
+    }
+    .second-section-second-btn{
+        margin-top: 8px;
+        margin-left: 15px;
+    }
+}

@@ -1,0 +1,203 @@
+<!-- curriculum_builder.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Curriculum Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #courseBuilder {
+            max-width: 600px;
+            margin: auto;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        button {
+            margin-top: 10px;
+        }
+        .edit-delete {
+            margin-top: 5px;
+        }
+        .edit-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="courseBuilder">
+    <h2>Course Curriculum Builder</h2>
+    
+    <div class="section">
+        <label for="sectionName">Section Name:</label>
+        <input type="text" id="sectionName">
+        <button onclick="addSection()">Add Section</button>
+    </div>
+    
+    <div id="sectionsContainer"></div>
+
+</div>
+
+<script>
+    function addSection() {
+        const sectionName = document.getElementById('sectionName').value;
+        if (sectionName.trim() !== '') {
+            const sectionContainer = document.getElementById('sectionsContainer');
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'section';
+            sectionDiv.innerHTML = `
+                <h3>${sectionName}</h3>
+                
+                <label for="lecture">Lecture:</label>
+                <input type="text" id="lecture">
+                <button onclick="addLecture('${sectionName}')">Add Lecture</button>
+                
+                <label for="assignmentDescription">Assignment Description:</label>
+                <textarea id="assignmentDescription"></textarea>
+                <label for="assignmentFile">Assignment File:</label>
+                <input type="file" id="assignmentFile">
+                <label for="assignmentDuration">Assignment Duration (in minutes):</label>
+                <input type="text" id="assignmentDuration">
+                <button onclick="addAssignment('${sectionName}')">Add Assignment</button>
+
+                <label for="quizQuestion">Quiz Question:</label>
+                <input type="text" id="quizQuestion">
+                <label for="quizOption1">Option 1:</label>
+                <input type="text" id="quizOption1">
+                <label for="quizOption2">Option 2:</label>
+                <input type="text" id="quizOption2">
+                <label for="quizOption3">Option 3:</label>
+                <input type="text" id="quizOption3">
+                <label for="quizOption4">Option 4:</label>
+                <input type="text" id="quizOption4">
+                <button onclick="addQuiz('${sectionName}')">Add Quiz</button>
+
+                <div class="edit-delete">
+                    <button onclick="editSection(this)">Edit Section</button>
+                    <button onclick="deleteSection(this)">Delete Section</button>
+                </div>
+                <div class="edit-input" style="display: none;">
+                    <input type="text" id="editSectionInput">
+                    <button onclick="saveSection(this)">Save</button>
+                    <button onclick="cancelEdit(this)">Cancel</button>
+                </div>
+            `;
+            sectionContainer.appendChild(sectionDiv);
+        }
+    }
+
+    function addLecture(sectionName) {
+        const lectureInput = document.getElementById('lecture');
+        const lectureName = lectureInput.value;
+        if (lectureName.trim() !== '') {
+            const lectureDiv = document.createElement('div');
+            lectureDiv.innerHTML = `- Lecture: ${lectureName}`;
+            
+            const sections = document.getElementsByClassName('section');
+            for (const section of sections) {
+                if (section.querySelector('h3').innerText === sectionName) {
+                    section.appendChild(lectureDiv);
+                    break;
+                }
+            }
+
+            lectureInput.value = ''; // Clear the input field
+        }
+    }
+
+    function addAssignment(sectionName) {
+        const assignmentDescription = document.getElementById('assignmentDescription').value;
+        const assignmentFile = document.getElementById('assignmentFile').value;
+        const assignmentDuration = document.getElementById('assignmentDuration').value;
+        if (assignmentDescription.trim() !== '') {
+            const assignmentDiv = document.createElement('div');
+            assignmentDiv.innerHTML = `
+                - Assignment: ${assignmentDescription} 
+                  (File: ${assignmentFile}, Duration: ${assignmentDuration} minutes)
+            `;
+            
+            const sections = document.getElementsByClassName('section');
+            for (const section of sections) {
+                if (section.querySelector('h3').innerText === sectionName) {
+                    section.appendChild(assignmentDiv);
+                    break;
+                }
+            }
+
+            // Clear the input fields
+            document.getElementById('assignmentDescription').value = '';
+            document.getElementById('assignmentFile').value = '';
+            document.getElementById('assignmentDuration').value = '';
+        }
+    }
+
+    function addQuiz(sectionName) {
+        const quizQuestion = document.getElementById('quizQuestion').value;
+        const quizOption1 = document.getElementById('quizOption1').value;
+        const quizOption2 = document.getElementById('quizOption2').value;
+        const quizOption3 = document.getElementById('quizOption3').value;
+        const quizOption4 = document.getElementById('quizOption4').value;
+        if (quizQuestion.trim() !== '' && quizOption1.trim() !== '' && quizOption2.trim() !== '' && quizOption3.trim() !== '' && quizOption4.trim() !== '') {
+            const quizDiv = document.createElement('div');
+            quizDiv.innerHTML = `
+                - Quiz Question: ${quizQuestion}, Options: 
+                  1. ${quizOption1}, 2. ${quizOption2}, 3. ${quizOption3}, 4. ${quizOption4}
+            `;
+            
+            const sections = document.getElementsByClassName('section');
+            for (const section of sections) {
+                if (section.querySelector('h3').innerText === sectionName) {
+                    section.appendChild(quizDiv);
+                    break;
+                }
+            }
+
+            // Clear the input fields
+            document.getElementById('quizQuestion').value = '';
+            document.getElementById('quizOption1').value = '';
+            document.getElementById('quizOption2').value = '';
+            document.getElementById('quizOption3').value = '';
+            document.getElementById('quizOption4').value = '';
+        }
+    }
+
+    function editSection(button) {
+        const sectionDiv = button.closest('.section');
+        const editInput = sectionDiv.querySelector('.edit-input');
+        const sectionText = sectionDiv.querySelector('h3');
+        editInput.querySelector('input').value = sectionText.innerText;
+        sectionText.style.display = 'none';
+        editInput.style.display = 'block';
+    }
+
+    function saveSection(button) {
+        const sectionDiv = button.closest('.section');
+        const editInput = sectionDiv.querySelector('.edit-input');
+        const sectionText = sectionDiv.querySelector('h3');
+        sectionText.innerText = editInput.querySelector('input').value;
+        sectionText.style.display = 'block';
+        editInput.style.display = 'none';
+    }
+
+    function cancelEdit(button) {
+        const sectionDiv = button.closest('.section');
+        const editInput = sectionDiv.querySelector('.edit-input');
+        const sectionText = sectionDiv.querySelector('h3');
+        sectionText.style.display = 'block';
+        editInput.style.display = 'none';
+    }
+
+    function deleteSection(button) {
+        const sectionDiv = button.closest('.section');
+        sectionDiv.remove();
+    }
+</script>
+
+</body>
+</html>

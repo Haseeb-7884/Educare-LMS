@@ -1,0 +1,13 @@
+$NewObj4 = new backend();
+                    // $LoginId = $_SESSION['id'];
+                    $LoginId = 1; 
+    
+                    $CoursesData5 =  $NewObj4->fetching('registration','*',null,"registration_id = $LoginId");
+                        
+                    foreach($CoursesData5 as $Emailed){
+                        $email = $Emailed['email'];
+                        ?>
+                            <span><?= $email ?></span> 
+                        <?php 
+                    }// for loop ends here 
+                    

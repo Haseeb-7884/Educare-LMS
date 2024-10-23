@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enrollment Message</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Custom Styles */
+    .enrollment-section {
+      background-color: #007bff; /* Blue Background */
+      padding: 30px 0; /* Reduced padding */
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    }
+    .enrollment-icon {
+      font-size: 72px;
+      color: #fff; /* White Icon Color */
+      animation: pulse 2s infinite alternate;
+    }
+    .enrollment-message {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #fff; /* White Text Color */
+    }
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.1);
+      }
+    }
+    @media (max-width: 576px) {
+      .enrollment-icon {
+        font-size: 48px;
+      }
+      .enrollment-message {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="enrollment-section">
+        <i class="enrollment-icon fas fa-graduation-cap"></i>
+        <div class="enrollment-message">
+          <p>You haven't enrolled in any course yet.</p>
+          <p>Start your learning journey now!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS (optional, if needed) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

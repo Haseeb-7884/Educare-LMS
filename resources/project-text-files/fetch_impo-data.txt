@@ -1,0 +1,9 @@
+  <?php
+        // Fetch all categories and populate the dropdown
+        $categories = array("programming", "design", "business");  // Replace with actual categories from your database
+
+        foreach ($categories as $category) {
+            $selected = ($category == $selectedCategory) ? 'selected' : '';
+            echo "<option value=\"$category\" $selected>$category</option>";
+        }
+        ?>

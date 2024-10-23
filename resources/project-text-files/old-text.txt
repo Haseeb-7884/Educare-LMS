@@ -1,0 +1,7 @@
+okay now make  one more Adjustment when 
+a user select on the lecture then he also get the 2 options if
+ he select a video then input field of file or a simple inpt field  in case if he want to upload the 
+video from his device then he can use file input field or if have to upload from the
+	 youtube then share the link in the input field get appear or if he select the Article option then also an input field of file apper where he upload article 
+
+ChatGPT

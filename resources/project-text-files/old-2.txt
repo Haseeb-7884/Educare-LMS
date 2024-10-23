@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Curriculum Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #courseBuilder {
+            max-width: 600px;
+            margin: auto;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        button {
+            margin-top: 10px;
+        }
+        .edit-delete {
+            margin-top: 5px;
+        }
+        .edit-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="courseBuilder">
+    <h2>Course Curriculum Builder</h2>
+    
+    <div class="section">
+        <label for="sectionName">Section Name:</label>
+        <input type="text" id="sectionName">
+        <button onclick="addSection()">Add Section</button>
+    </div>
+    
+    <div id="sectionsContainer"></div>
+
+</div>
+
+<script>
+    function addSection() {
+        const sectionName = document.getElementById('sectionName').value;
+        if (sectionName.trim() !== '') {
+            const sectionContainer = document.getElementById('sectionsContainer');
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'section';
+            sectionDiv.innerHTML = `
+                <h3>${sectionName}</h3>
+                <label for="lecture">Lecture:</label>
+                <input type="text" id="lecture">
+                <button onclick="addLecture('${sectionName}')">Add Lecture</button>
+                <div class="edit-delete">
+                    <button onclick="editSection(this)">Edit Section</button>
+                    <button onclick="deleteSection(this)">Delete Section</button>
+                </div>
+                <div class="edit-input" style="display: none;">
+                    <input type="text" id="editSectionInput">
+                    <button onclick="saveSection(this)">Save</button>
+                    <button onclick="cancelEdit(this)">Cancel</button>
+                </div>
+                <!-- Add similar input fields for Assignment and Quiz -->
+            `;
+            sectionContainer.appendChild(sectionDiv);
+        }
+    }
+
+    function addLecture(sectionName) {
+        const lectureInput = document.getElementById('lecture');
+        const lectureName = lectureInput.value;
+        if (lectureName.trim() !== '') {
+            const lectureDiv = document.createElement('div');
+            lectureDiv.innerHTML = `- ${lectureName}`;
+            
+            const sections = document.getElementsByClassName('section');
+            for (const section of sections) {
+                if (section.querySelector('h3').innerText === sectionName) {
+                    section.appendChild(lectureDiv);
+                    break;
+                }
+            }
+
+            lectureInput.value = ''; // Clear the input field
+        }
+    }
+
+    function editSection(button) {
+        const sectionDiv = button.closest('.section');
+        const editInput = sectionDiv.querySelector('.edit-input');
+        const sectionText = sectionDiv.querySelector('h3');
+        editInput.querySelector('input').value = sectionText.innerText;
+        sectionText.style.display = 'none';
+        editInput.style.display = 'block';
+    }
+
+    function saveSection(button) {
+        const sectionDiv = button.closest('.section');
+        const editInput = sectionDiv.querySelector('.edit-input');
+        const sectionText = sectionDiv.querySelector('h3');
+        sectionText.innerText = editInput.querySelector('input').value;
+        sectionText.style.display = 'block';
+        editInput.style.display = 'none';
+    }
+
+    function cancelEdit(button) {
+        const sectionDiv = button.closest('.section');
+        const editInput = sectionDiv.querySelector('.edit-input');
+        const sectionText = sectionDiv.querySelector('h3');
+        sectionText.style.display = 'block';
+        editInput.style.display = 'none';
+    }
+
+    function deleteSection(button) {
+        const sectionDiv = button.closest('.section');
+        sectionDiv.remove();
+    }
+    // Add similar functions for editing and deleting lectures, assignments, and quizzes
+</script>
+
+</body>
+</html>

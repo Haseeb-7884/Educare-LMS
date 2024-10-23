@@ -1,0 +1,15 @@
+section name  = htmlspecialchars($sectionName) (alternate) $sectionName
+content type = htmlspecialchars($_POST['contentOption'][$index]) (alternate)  $_POST['contentOption'][$index]
+ content type = lecture 
+  lecture type = { 'lecture' = htmlspecialchars($_POST['lectureType'][$index]) (alternate)  $_POST['lectureType'][$index] }
+  lecture type = { 'lecture_video' = htmlspecialchars($_POST['localVideo'][$index]) (alternate)  $_POST['localVideo'][$index] }
+  lecture type = { 'lecture_video_online' = htmlspecialchars($_POST['YoutubeVideo'][$index]) (alternate)  $_POST['YoutubeVideo'][$index] }
+ content type = assignment
+  assignment type = { 'small_assessment' = htmlspecialchars($_POST['smallAssessmentDescription'][$index]) (alternate) $_POST['smallAssessmentDescription'][$index] }
+  assignment type = { 'assignment' = htmlspecialchars($_POST['assignmentFile'][$index]) (alternate) $_POST['assignmentFile'][$index] }
+  assignment type = { 'practical_task' = htmlspecialchars($_POST['practicalTaskDetails'][$index]) (alternate) $_POST['practicalTaskDetails'][$index] }
+ content type = quiz
+  quiz type = { 'quick_quiz' = htmlspecialchars($_POST['quizQuestion_'][$index]) (alternate) $_POST['quizQuestion_'][$index][$i] }
+  quiz type = { 'quiz' = htmlspecialchars($_POST['quizQuestion_'][$index]) (alternate) $_POST['quizQuestion_' . $index][0] }
+  for quiz option 
+    _POST['quizOption(number like 1 2 3 4)_' . $index][0]

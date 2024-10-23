@@ -1,0 +1,33 @@
+// ...
+
+case 'quiz':
+    if (isset($_POST['sectionName'][0]) && isset($_POST['quizQuestion'][0])) {
+        $sectionName = $conn->real_escape_string($_POST['sectionName'][0]);
+        $quizQuestion = $conn->real_escape_string($_POST['quizQuestion'][0]);
+
+        // Insert data into course_sections table
+        $sql = "INSERT INTO course_sections (section_name, content_option) VALUES ('$sectionName', 'quiz')";
+        if ($conn->query($sql) === FALSE) {
+            echo "Error inserting into course_sections: " . $conn->error;
+        }
+
+        // Get the ID of the last inserted section
+        $sectionId = $conn->insert_id;
+
+        // Insert data into quizzes table
+        $sql = "INSERT INTO quiz_questions (section_id, quiz_type) VALUES ('$sectionId', 'single_choice')";
+        if ($conn->query($sql) === FALSE) {
+            echo "Error inserting into quizzes: " . $conn->error;
+        }
+
+        // Insert data into quiz_questions table
+        $sql = "INSERT INTO quiz_questions (section_id, question_text, option1, option2, option3, option4, correct_option) 
+                VALUES ('$sectionId', '$quizQuestion', 
+                        '{$_POST['quizOption1'][0]}', '{$_POST['quizOption2'][0]}', '{$_POST['quizOption3'][0]}', '{$_POST['quizOption4'][0]}','{$_POST['quizOption5'][0]}')";
+        if ($conn->query($sql) === FALSE) {
+            echo "Error inserting into quiz_questions: " . $conn->error;
+        }
+    }
+    break;
+
+// ...

@@ -1,0 +1,5 @@
+Type of Variables in php
+
+Local Variables
+Global Variables
+Static Variables

@@ -1,0 +1,19 @@
+  <a href="" class="card mb-3 col-md-3 text-decoration-none text-dark" style="width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="../instructor/new/<?= $course_img ?>" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><?= $course_title ?></h5>
+       <?php 
+      
+         $get_first = $all_data->fetching('course_requirments','*',null,"courses_id = $courses_id");
+         foreach($get_first as $get_first_all){
+          $last_updated = $get_first_all['last_updated']; }
+       ?>
+        <p class="card-text"><small class="text-muted">Last updated <?=  $last_updated ?></small></p>
+      </div>
+    </div>
+  </div>
+  </a>

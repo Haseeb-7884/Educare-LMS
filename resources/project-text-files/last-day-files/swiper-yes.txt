@@ -1,0 +1,96 @@
+  <div class="swiper-slide">
+            <div class="row row-cols-1 row-cols-lg-4 g-3 g-lg-3">
+            <?php 
+            $SpecialCources = new backend();
+
+            $Coup = $SpecialCources->fetching('coupons');
+
+            $coup_slice = array_slice($Coup, 0, 3);
+
+            if(!empty($coup_slice)){
+            foreach($Coup as $imp_data){
+            $cours_id = $imp_data['courses_id'];
+
+            $Cour = $SpecialCources->fetching('cource','*',null,"courses_id = $cours_id");
+
+            foreach ($Cour as $discounted) {
+            if (true){
+                $course_id = $discounted['courses_id'];
+                $Course_Title = $discounted['course_title'];
+                $Course_Img = $discounted['course_img'];
+                $Course_Video = $discounted['course_video'];
+                $Instructor_Id = $discounted['instructor_id'];
+               ?>
+               
+                    <a href="" class="col text-decoration-none text-dark">
+                        <div class="card h-100">
+                            <img src="assets/images/web-development.jpg" class="card-img-top p-2" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $Course_Title ?></h5>
+                                <div style="color:#005eff;" class="d-flex justify-content-between">
+                                    <p class="card-text"> 5.5
+                                        <i class="fa-solid fa-star ms-2" style="color: #ffc800;"></i>
+                                        <i class="fa-solid fa-star" style="color: #ffc800;"></i>
+                                        <i class="fa-solid fa-star" style="color: #ffc800;"></i>
+                                        <i class="fa-solid fa-star" style="color: #ffc800;"></i>
+                                        <i class="fa-solid fa-star" style="color: #ffc800;"></i>
+                                    </p>
+                                    <?php 
+                                $Discounted = $SpecialCources->fetching('coupons','*',null,"courses_id = $course_id");   
+                                if(!empty($Discounted)){
+
+                                foreach($Discounted as $discountedPrice){
+                                    $Courses_id =  $discountedPrice['courses_id'];
+                                    $discountPercent =  $discountedPrice['coupon_percent'];
+                                    $priced = $SpecialCources->fetching('course_prices','*',null,"courses_id = $course_id");
+                                    foreach($priced as $CommonPrice){
+                                        $Course_price =  $CommonPrice['course_price'];
+                                        if($Course_price != 'Free'){
+                                        $discount_percentage = $discountPercent / 100;
+                                        $discount_amount = $discount_percentage * $Course_price;
+                                        $final_price = $Course_price - $discount_amount;
+                                        ?>
+                                          <p class="fw-bold">
+                                            <?= $final_price ?>
+                                          </p>
+                                          <p class="fw-bold">
+                                            <strike><?= $Course_price ?></strike>
+                                          </p>
+                                        <?php 
+                                            // $counter++;
+                                }// if condition ends
+                                elseif($Course_price === 'Free'){
+                                    ?>
+                                    <p class="fw-bold">
+                                    <?= $Course_price ?>
+                                    </p>
+                                    <?php 
+                                }
+                                    }// loop ends here
+                                } // outer loop ended        
+                            }else{
+                                echo null;
+                            }
+
+                                ?>
+                                    
+                                </div>
+                              
+                                <div>
+                                    <p>Mr Instructor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+             
+        <?php
+                    } // if condition ends 
+        } // for loop ends
+} // first one if ends here 
+}else{
+    echo null;
+}
+
+        ?>
+           </div>
+            </div>

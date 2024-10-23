@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    .error_main_continer{
+        height: 50px;
+        width: 1100px;
+        border: 2px solid darkred;
+        border-radius: 5px;
+    }
+    .error_container_fluid{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    .error_container_fluid > i{
+        width: 6%;
+        height: 100%;
+        font-size: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: darkred;
+        font-weight: bold;
+    }
+    .error_container_fluid > section{
+        width: 93%;
+        height: 100%;
+        color: darkred;
+        font-weight: bold;
+        padding: 30px 5px 5px 10px;
+        font-size: 18px;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="error_main_continer">
+        <div class="error_container_fluid">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <section>
+            It seems that you have tried to submit form without entering mendatory entities. 
+                    Please fill all the required information to proceed.    
+                
+            </section>
+        </div>
+    </div>
+</body>
+</html>

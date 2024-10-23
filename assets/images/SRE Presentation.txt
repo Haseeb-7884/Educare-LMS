@@ -1,0 +1,77 @@
+Requirements 
+
+Requirements are specifications that describe the features, capabilities, and characteristics of a system or product. 
+
+Quality goals:
+
+Quality goals are specific, measurable objectives or standards that are established to ensure that a product or system meets certain criteria of quality. 
+These goals are set during the early stages of a project, often in the requirements phase, and they serve as benchmarks for evaluating 
+and ensuring the quality of the end result. 
+Quality goals, on the other hand, are criteria or standards that define the expected level of quality for the end result. 
+Integrating quality goals into the requirements process helps ensure that the final product meets certain standards and satisfies the needs of stakeholders. 
+quality goals contribute to the requirements
+ 
+Role of quality goals
+
+Following are the role of quality goals in the requirenments:
+-Measurable Metrics:
+-Define Acceptance Criteria
+-Guidance for Design and Development
+-Alignment with Stakeholder Expectations
+-Risk Mitigation
+-Continuous Improvement
+-Measuring Success
+-Facilitating Communication
+-Enhancing User Satisfaction
+
+Measurable Metrics:
+
+Quality goals are often associated with measurable metrics. By integrating these metrics into the requirements, 
+you provide a basis for objective evaluation of the product's quality. This measurability allows for ongoing assessment and adjustment throughout 
+the development process.
+
+Define Acceptance Criteria:
+
+Quality goals help define the acceptance criteria for the project. 
+These criteria specify the minimum standards that the product must meet to be considered acceptable by stakeholders. 
+By incorporating quality goals into requirements, you set clear expectations for the level of quality that the final product should achieve.
+
+Guidance for Design and Development:
+
+Quality goals serve as guidelines for designers and developers. 
+They provide a framework for making decisions throughout the development process. When the development team understands the quality goals, 
+they can make design and implementation choices that align with these goals, resulting in a product that meets specified quality standards.
+
+Alignment with Stakeholder Expectations:
+
+Quality goals are often derived from stakeholder expectations. Including these goals in the requirements ensures that the project team understands and 
+incorporates the priorities and preferences of stakeholders. This alignment helps prevent misunderstandings and ensures that the end product 
+meets the needs and expectations of those who will use or benefit from it.
+
+Risk Mitigation:
+
+Quality goals can also help identify potential risks early in the project. By defining quality expectations upfront, project teams can proactively address 
+potential challenges and risks that may impact the achievement of these goals. This proactive approach contributes to overall project success.
+
+Continuous Improvement:
+
+Quality goals contribute to a culture of continuous improvement. As the project progresses, the team can use the established quality goals as a benchmark 
+for assessing the product's progress. This assessment can lead to adjustments in the requirements or development processes to ensure that quality is 
+maintained or improved.
+
+Measuring Success:
+
+Quality goals provide measurable criteria for evaluating the success of the project. They serve as benchmarks against which the final product can be assessed. 
+Measuring success against these goals helps determine whether the project has achieved its objectives.
+
+Facilitating Communication:
+
+Quality goals serve as a communication tool between different stakeholders. They provide a common language for discussing and evaluating the quality aspects 
+of the product. This clarity in communication helps in avoiding misunderstandings and ensures that everyone involved has a shared understanding 
+of quality expectations.
+
+Enhancing User Satisfaction:
+
+Usability refers to the ease with which users can interact with and use a product to achieve their goals effectively and efficiently. Quality role play a key role in enhancing 
+user satisfaction by focusing on aspects such as aesthetics, feedback mechanisms, and overall user enjoyment. 
+

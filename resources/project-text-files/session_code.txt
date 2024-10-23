@@ -1,0 +1,20 @@
+                                <?php 
+                                session_start();
+                                include("../back.php");
+                          
+                                if(isset($_SESSION['login'])){
+                                $instructor_data = new backend();
+                                $get_data = $instructor_data->fetching('instructor');
+                                foreach($get_data as $maindata){
+                                    echo"<span class='mr-2 d-none d-lg-inline text-gray-600 small'>
+                                    ".$maindata['fname']." ".$maindata['lname']."
+                                    </span>
+                                        <img class='img-profile rounded-circle'
+                                        src='../../".$maindata['instructor_img']."'>";
+                                }
+                                }else{
+                                    ?>
+                                    <span class='mr-2 d-none d-lg-inline text-gray-600 small'>Douglas McGee</span>
+                                         <img class='img-profile rounded-circle'
+                                         src='img/undraw_profile.svg'>
+                                    <?php } ?>

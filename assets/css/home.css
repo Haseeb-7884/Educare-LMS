@@ -1,0 +1,258 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+
+}
+
+.main_font_color {
+  color: #304acf;
+}
+
+.hero_section {
+  margin-top:35px;
+  height: 88vh;
+  background-color: lightblue;
+}
+
+.badge-color {
+  background-color: rgb(207, 205, 86);
+  color: black;
+  /* rgb(236, 235, 152) */
+}
+
+
+.hero_section_courses{
+  height: 85vh;
+}
+
+
+ .swiper {
+  width: 100%;
+  height: 60vh;
+}
+
+.swiper-slide {
+  width: 33%;
+  height:100%;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.hero_section .first_horizontal hr {
+  background-color: #304acf;
+  width: 130px;
+  height: 10px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.hero_section .second_horizontal hr {
+  background-color: blue;
+  width: 90px;
+  height: 5px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.hero_section .third_horizontal hr {
+  background-color: #304acf;
+  width: 130px;
+  height: 10px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+
+.second_first_icon {
+  position: absolute;
+  top: 150px;
+  left: 60px;
+  border-radius: 50%;
+  background-color: #304acf;
+  height: 100px;
+  width: 100px;
+}
+
+.second_second_icon {
+  position: absolute;
+  top: 80px;
+  left: 500px;
+  border-radius: 50%;
+  background-color: white;
+  height: 100px;
+  width: 100px;
+}
+
+.second_third_icon {
+  position: absolute;
+  top: 500px;
+  left: 720px;
+  background-color: white;
+  height: 60px;
+  width: 200px;
+  /* border-radius: 10%; */
+}
+
+.second_third_icon .second_third_icon_img {
+  width: 40px;
+  height: 40px;
+  margin-left: 0px;
+}
+
+.second_third_icon_img_first {
+  position: absolute;
+  left: 20px;
+  /* top:10px; */
+  z-index: 1;
+}
+
+.second_third_icon {
+  font-size: 12px;
+  position: absolute;
+}
+
+.second_third_icon_decp {
+  position: absolute;
+  bottom: -15px;
+  left: 70px;
+}
+
+.course_search {
+  position: absolute;
+
+}
+
+.course_search_icon {
+  color: #005eff;
+  position: absolute;
+  left: 190px;
+}
+
+.course_pics {
+  width: 50px;
+  display: block;
+  margin: 0px auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* instructor section */
+
+.instructor_bg {
+  height: 40vh;
+  background-color: #add8e6;
+}
+
+.instructor_img_main {
+  height: 200px;
+  width: 750px;
+  /* border: 2px solid red; */
+  rotate: 365deg;
+  position: absolute;
+  right: 270px;
+  top: -5px;
+}
+.students_testimonials{
+  height: 60vh;
+  background-color: lightskyblue;
+  /* overflow: hidden; */
+}
+.students_testimonials > h2{
+  color: black;
+}
+.students_testimonials_main{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.students_testimonials_main > div{
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.431);
+  height: 250px;
+  border: 2px solid grey;
+}
+
+/* testimonal starts */
+
+.testimonial_section{
+  background-color: lightblue;
+  height: 60vh;
+  padding-top: 35px;
+  margin-top: 50px;
+}
+.textimonial_section_content{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  /* gap: 30px; */
+  height: 90%;
+  width: 65%;
+  margin: 0 auto;
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 5px;
+}
+.testimonial_section_content_first{
+  height: 100%;
+  width: 50%;
+  /* background-color: yellow; */
+  padding: 20px 20px 0px 25px;
+}
+.testimonial_section_content_first > p{
+  text-align: left;
+}
+.testimonial_section_content_first > a{
+  margin-top: 40px;
+}
+.testimonial_section_content_second{
+  width: 40%;
+  height: 100%;
+  /* background-color: brown; */
+}
+.testimonial_section_content_second > section{
+  height: 100px;
+  width: 100px;
+  margin: 25px 0px 0px 70px;
+  border-radius: 50%;
+  /* background-color: blue; */
+  overflow: hidden;
+}
+.testimonial_section_content_second > section > img{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.testimonial_section_content_second > h2{
+  /* background-color: yellow; */
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  margin-top: 15px;
+  padding-left: 75px;
+}
+.testimonial_section_content_second > span{
+  display: block;
+  color: black;
+  margin: 0px;
+  padding-left: 95px;
+  font-size: 15px;
+}
+.testimonial_section_content_second > p{
+  display: block;
+  color: black;
+  margin-top: 22px;
+  padding-left: 75px;
+  font-size: 15px;
+}
+
+.head{
+  background-color: lightblue;
+}

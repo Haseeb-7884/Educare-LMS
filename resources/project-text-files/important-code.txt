@@ -1,0 +1,43 @@
+ <div class="specific-content" id="specificContent${sectionId}">
+                <!-- Content specific to each option will be added here -->
+                <div id="quizDetails${sectionId}">
+                    <!-- Quiz specific inputs -->
+                    <label for="quizType${sectionId}" class="fw-bold mt-2 text-dark">Quiz Type:</label>
+                    <select id="quizType${sectionId}" name="quizType[]"
+                            onchange="updateQuizDetails(${sectionId})">
+                        <option value="" class="" selected disabled>Select from following</option>
+                        <option value="quick_quiz">Quick Quiz</option>
+                        <option value="quiz">Quiz</option>
+                    </select>
+                    <div id="quizQuestionsContainer${sectionId}">
+                        <!-- Container for quiz questions -->
+                    </div>
+                </div>
+            </div>
+
+function addQuizQuestion(sectionId) {
+    const quizQuestionsContainer = document.getElementById(`quizQuestionsContainer${sectionId}`);
+    const questionCounter = quizQuestionsContainer.childElementCount + 1;
+
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'quiz-question-container';
+    questionDiv.innerHTML = `
+        <label for="quizQuestion${sectionId}_${questionCounter}">Question ${questionCounter}:</label>
+        <input type="text" id="quizQuestion${sectionId}_${questionCounter}" name="quizQuestion_${sectionId}[]">
+
+        <label for="quizOption1${sectionId}_${questionCounter}">Option 1:</label>
+        <input type="text" id="quizOption1${sectionId}_${questionCounter}" name="quizOption1_${sectionId}[]">
+
+        <label for="quizOption2${sectionId}_${questionCounter}">Option 2:</label>
+        <input type="text" id="quizOption2${sectionId}_${questionCounter}" name="quizOption2_${sectionId}[]">
+
+        <label for="quizOption3${sectionId}_${questionCounter}">Option 3:</label>
+        <input type="text" id="quizOption3${sectionId}_${questionCounter}" name="quizOption3_${sectionId}[]">
+
+        <label for="quizOption4${sectionId}_${questionCounter}">Option 4:</label>
+        <input type="text" id="quizOption4${sectionId}_${questionCounter}" name="quizOption4_${sectionId}[]">
+    `;
+
+    // Append the questionDiv to quizQuestionsContainer
+    quizQuestionsContainer.appendChild(questionDiv);
+}

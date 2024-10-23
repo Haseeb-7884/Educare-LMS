@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0; 
+}
+.green{
+    background-color: rgb(209, 62, 21);
+    height: 344px;
+    color: aqua;
+}
+.blue{
+    background-color: blue;
+    color: azure;
+}

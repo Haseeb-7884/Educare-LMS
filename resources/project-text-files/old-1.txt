@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Curriculum Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #courseBuilder {
+            max-width: 600px;
+            margin: auto;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="courseBuilder">
+    <h2>Course Curriculum Builder</h2>
+    
+    <div class="section">
+        <label for="sectionName">Section Name:</label>
+        <input type="text" id="sectionName">
+        <button onclick="addSection()">Add Section</button>
+    </div>
+    
+    <div id="sectionsContainer"></div>
+
+</div>
+
+<script>
+    function addSection() {
+        const sectionName = document.getElementById('sectionName').value;
+        if (sectionName.trim() !== '') {
+            const sectionContainer = document.getElementById('sectionsContainer');
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'section';
+            sectionDiv.innerHTML = `
+                <h3>${sectionName}</h3>
+                <label for="lecture">Lecture:</label>
+                <input type="text" id="lecture">
+                <button onclick="addLecture('${sectionName}')">Add Lecture</button>
+                <!-- Add similar input fields for Assignment and Quiz -->
+            `;
+            sectionContainer.appendChild(sectionDiv);
+        }
+    }
+
+    function addLecture(sectionName) {
+        const lectureInput = document.getElementById('lecture');
+        const lectureName = lectureInput.value;
+        if (lectureName.trim() !== '') {
+            const lectureDiv = document.createElement('div');
+            lectureDiv.innerHTML = `- ${lectureName}`;
+            
+            const sections = document.getElementsByClassName('section');
+            for (const section of sections) {
+                if (section.querySelector('h3').innerText === sectionName) {
+                    section.appendChild(lectureDiv);
+                    break;
+                }
+            }
+
+            lectureInput.value = ''; // Clear the input field
+        }
+    }
+    // Add similar functions for adding Assignment and Quiz
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<form action="submit_course.php" method="post">
+    <fieldset>
+        <legend>Quizzes</legend>
+        <table>
+            <tr>
+                <th>Question</th>
+                <th>Option 1</th>
+                <th>Option 2</th>
+                <th>Option 3</th>
+                <th>Option 4</th>
+                <th>Correct Option</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="quiz_question[]" required></td>
+                <td><input type="text" name="quiz_option1[]" required></td>
+                <td><input type="text" name="quiz_option2[]" required></td>
+                <td><input type="text" name="quiz_option3[]" required></td>
+                <td><input type="text" name="quiz_option4[]" required></td>
+                <td><input type="text" name="correct_option[]" required></td>
+            </tr>
+            <!-- Additional rows can be added dynamically if needed -->
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>Assignments</legend>
+        <table>
+            <tr>
+                <th>Assignment Description</th>
+                <th>Upload File</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="assignment_description[]" required></td>
+                <td><input type="file" name="assignment_file[]" required></td>
+            </tr>
+            <!-- Additional rows can be added dynamically if needed -->
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>Lectures</legend>
+        <table>
+            <tr>
+                <th>Lecture Type</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <select name="lecture_type[]" required>
+                        <option value="article">Article</option>
+                        <option value="lecture_video">Video</option>
+                        <option value="online_video">Online Video</option>
+                    </select>
+                </td>
+                <td><input type="text" name="lecture_details[]" required></td>
+            </tr>
+            <!-- Additional rows can be added dynamically if needed -->
+        </table>
+    </fieldset>
+
+    <button type="submit">Submit Course</button>
+</form>

@@ -1,0 +1,13 @@
+project 
+
+registration   registration_id email username password 
+
+instructor   instructor_id fname lname headline number instructor_img website twitter facebook linkdin youtube biography registration_id
+
+cources_categories  category_id category_name
+
+cource_details    course_id course_name category (category_id)
+
+cource  courses_id course_title course_subtitle select_language selecting_level select_category primary_taught course_img course_video instructor_name course_description instructor_id
+
+course_requirments  requirments_id course_requirments course_outcome course_includes course_learners courses_id

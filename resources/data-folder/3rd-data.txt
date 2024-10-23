@@ -1,0 +1,33 @@
+                              <?php 
+                        $NewObj3 = new backend();
+
+                        
+                        $LoginId = $_SESSION['id'];
+                        // $LoginId = 1; 
+                    
+
+                        if(isset($_SESSION)){
+
+                        
+                        $CoursesData4 =  $NewObj3->fetching('instructor','*',null,"registration_id = $LoginId");
+                        
+                        
+                        foreach($CoursesData4 as $Allrecords){
+                            $fname = $Allrecords['fname'];
+                            $lname = $Allrecords['lname'];
+                            $compeleteName = $fname ."&nbsp;". $lname;
+                            ?>
+                        <a  href="http://localhost/PHP-OOP/PROJECT/instructor/dashboard/profile.php">
+                            <?= $compeleteName  ?>
+                        </a>
+                            <?php 
+                        }// loop ends
+                    }else{
+    ?>
+    <a  href="http://localhost/PHP-OOP/PROJECT/instructor/dashboard/profile.php">
+                            MNS
+                        </a>
+    <?php
+                    }
+
+    ?>

@@ -1,0 +1,57 @@
+
+    <a href="course_select.php?course_id=<?= $courses_id ?>" class="text-decoration-none text-dark">
+        <div class="col">
+          <div class="card h-100">
+           <img src="instructor/new/uploads/Best 5 Website Optimization Tips Optimizing Websites for Search Engines.jpg"
+          class="card-img-top p-2" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">
+                Learn JavaScript Developement From Basic to Advance
+                
+              </h5>
+              <div style="color:#005eff;" class="d-flex justify-content-between">
+                <p class="card-text"> 5.5
+                  <i class="fa-solid fa-star ms-2" style="color: #ffc800;"></i>
+                  <i class="fa-solid fa-star" style="color: #ffc800;"></i>
+                  <i class="fa-solid fa-star" style="color: #ffc800;"></i>
+                  <i class="fa-solid fa-star" style="color: #ffc800;"></i>
+                  <i class="fa-solid fa-star" style="color: #ffc800;"></i>
+                </p>
+                
+                 <span class="badge fw-bold" style="height:23px;display:block;color:white; background-color:red">Free</span>
+<!--               
+                <p class='fw-bold'>
+               
+                  $50.00
+                </p>
+                -->
+               
+              </div>
+
+              <div>
+              <div class="d-flex justify-content-between">
+
+                <div class="d-flex justify-content-between">
+                <img style="height: 25px;width: 25px;border-radius: 100px;" src='uploads/first-person.jpg'>
+                    <p class="fw-bold ms-3">
+                      Mr Instructor
+                    </p></div>
+
+                  <div>
+                    <h5 class="fw-bold"><span style="background-color:rgb(238, 236, 85);color: black;" class="badge">Best Seller</span></h5>
+                  </div>
+
+              </div>
+
+                <p><span class="fw-bold">last updated</span>
+                <?php 
+                  
+                  echo "2021-10-00";
+                ?>
+                 </p>
+                <p> <span class="fw-bold">Learning level</span> &nbsp; &nbsp; Intermediate </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>

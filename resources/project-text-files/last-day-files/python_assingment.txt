@@ -1,0 +1,46 @@
+# Define the goal state
+goal_state = {'A': 0, 'B': 0, 'C': 0, 'D': 0}
+
+# Define the transition model: Dictionary representing connections between rooms
+transition_model = {'A': ['B'], 'B': ['A', 'C'], 'C': ['B', 'D'], 'D': ['C']}
+
+# Function to check if a state is a goal state
+def is_goal(state):
+    return state == goal_state
+
+# Function to perform the vacuum cleaner actions
+def perform_actions(initial_state):
+    current_state = initial_state.copy()
+    actions = []
+
+    # Iterate until goal state is reached
+    while not is_goal(current_state):
+        room = input("Enter the current location (A/B/C/D): ")
+        status = int(input("Enter the status of the current location (0 for clean, 1 for dirt): "))
+
+        # Perform cleaning action
+        if status == 1:
+            current_state[room] = 0
+            actions.append(0)
+            print("Cleaned room", room)
+        
+        # Perform sensing action
+        for adjacent_room in transition_model[room]:
+            if current_state[adjacent_room] == 1:
+                current_state[adjacent_room] = 0
+                actions.append(1)
+                print("Sensed dirt in room", adjacent_room)
+        
+        print("Current state:", current_state)
+
+    print("Goal state reached!")
+    print("Sequence of actions:", actions)
+    print("Path cost:", len(actions))
+
+# Main function
+def main():
+    initial_state = {'A': 1, 'B': 1, 'C': 1, 'D': 1}
+    perform_actions(initial_state)
+
+if __name__ == "__main__":
+    main()

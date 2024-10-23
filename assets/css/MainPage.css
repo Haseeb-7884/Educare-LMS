@@ -1,0 +1,17 @@
+.main_section_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40vh;
+    flex-direction: row;
+    gap: 15px;
+}
+.main_section_container > div{
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40vh;
+    width: 100%;
+}

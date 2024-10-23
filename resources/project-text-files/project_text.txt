@@ -1,0 +1,23 @@
+title
+selecting a category 
+How much time spending on course 
+
+
+main course-dashboard 
+
+plan your course 
+  intended learners
+  course strcture 
+  setup $ text video
+
+create your content 
+  film $ edit 
+  Curriculam
+  Captians(optional)
+  Accessibility(optional)
+
+Publish your Course 
+  Course landing page 
+  pricing 
+  promotions 
+  course messages 
